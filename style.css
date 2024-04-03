@@ -1,0 +1,35 @@
+#gameConfig {
+    background-color: chartreuse;
+    position: relative;
+    font-size: 24px;
+    height: 200px;
+}
+#title { 
+    text-align: center;
+}
+#presetList {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+#presetTitle {
+    text-align: center;
+}
+#restart {
+    width: 250px;
+    height: 75px;
+    position: absolute;
+    top: 33%;
+    left: 43.3%;
+    font-size: 32px;
+}
+#cellSize {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+}
+#colorChoosers {
+    position: absolute;
+    top: 50%;
+    left: 85%;
+}

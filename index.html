@@ -3,15 +3,61 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Game Project Title Goes Here</title>
+    <title>Game of Life Simulation</title>
   
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <script type="text/javascript" src="./assetmanager.js"></script>
     <script type="text/javascript" src="./timer.js"></script>
+    <script type="text/javascript" src="./automata.js"></script>
     <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./util.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </head>
 <body>
-    <canvas id="gameWorld" width="1024" height="768" style="background: white; border: 1px solid black" tabindex="0" autofocus></canvas>
+    <canvas id="gameWorld" width="1536" height="768" style="background: black; border: 1px solid black" tabindex="0" autofocus></canvas>
+    <br>
+    <h4 id="tickCounter">Total Ticks: 0</h4>
+    <label>Fast</label>
+    <input type="range" min="1" max="61" value="15" step="1" id="tickSpeed">
+    <label>Slow</label>
+    <div id="gameConfig">
+        <h3 id="title">Game Configuration</h3>
+        <div id="presetList">
+            <h4 id="presetTitle">Game Presets</h4>
+            <input type="radio" id="presetrand" name="presets" value="random" checked>
+            <label for="presetrand">Random</label>
+
+            <input type="radio" id="presetf" name="presets" value="presetf">
+            <label for="presetf">F</label>
+
+            <input type="radio" id="presetblock" name="presets" value="blockEngine">
+            <label for="presetblock">Block Engine</label>
+
+            <input type="radio" id="presetblinkship" name="presets" value="blinkShip">
+            <label for="presetblinkship">Blinker Ship</label>
+
+            <input type="radio" id="presetwire" name="presets" value="lightWire">
+            <label for="presetwire">Lightspeed Wire</label>
+        </div>
+
+        <button id="restart" onclick="automata.restart()">Restart Game</button>
+
+        <div id="cellSize">
+            <label><strong>Cell Size:</strong></label>
+            <label>Small</label>
+            <input type="range" min="1" max="4" value="2" step="1" id="blockSize">
+            <label>Large</label>
+        </div>
+
+        <div id="colorChoosers">
+            <input type="color" id="cellColor" value="#FFFFFF">
+            <label for="cellColor">Live Cell Color</label>
+            <br>
+            <input type="color" id="backgroundColor" value="#000000">
+            <label for="backgroundColor">Background Color</label>
+        </div>
+    </div>
+
 </body>
 </html>
